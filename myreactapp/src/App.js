@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './Components/Home';
 import Listings from './Components/Productlist';
@@ -17,6 +17,9 @@ import SignupForm from './Components/SignupForm'; // Corrected import
 import './App.css';
 
 function App() {
+  // State to determine if the user is an admin
+  const [isAdmin, setIsAdmin] = useState(false); // Change to true if the user is an admin
+
   return (
     <Router>
       <div className="app">
@@ -27,8 +30,8 @@ function App() {
           <Link to="/contact">Contact</Link>
           <Link to="/about">About</Link>
           <Link to="/login">Login</Link>
-          <Link to="/admin">Admin</Link>
-          <Link to="/signup">Sign Up</Link> {/* Added missing link */}
+          <Link to="/signup">Sign Up</Link>
+          {isAdmin && <Link to="/admin">Admin</Link>} {/* Conditionally render the Admin link */}
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />

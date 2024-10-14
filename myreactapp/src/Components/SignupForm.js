@@ -1,4 +1,3 @@
-// src/SignupForm.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -19,9 +18,9 @@ function SignupForm() {
     };
 
     return (
-        <div className="signup-container">
-            <h2 className="signup-title">Create a New Account</h2>
-            <form className="signup-form" onSubmit={handleSubmit}>
+        <div className="login-container">
+            <h2 className="login-title">Create a New Account</h2>
+            <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
@@ -38,7 +37,7 @@ function SignupForm() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit" className="signup-button">Sign Up</button>
+                <button type="submit" className="login-button">Sign Up</button>
             </form>
         </div>
     );
