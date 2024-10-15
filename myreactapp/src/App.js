@@ -18,7 +18,7 @@ import './App.css';
 
 function App() {
   // State to determine if the user is an admin
-  const [isAdmin, setIsAdmin] = useState(false); // Change to true if the user is an admin
+  const [isAdmin, setIsAdmin] = useState(true); // Change to true if the user is an admin
 
   return (
     <Router>
